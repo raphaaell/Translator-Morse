@@ -11,7 +11,10 @@ namespace morse{
             if(MTT){
                 while(true){
                     Console.Write("Morse : ");
-                    String s = Console.In.ReadLine();
+                    String s = Console.In.ReadLine().ToLower();
+                    if(s == "!exit"){
+                        break;
+                    }
                     String[] morse = s.Split(' ');
                     String text = "";
                     for (int i = 0; i < morse.Length; i++){
@@ -22,7 +25,10 @@ namespace morse{
             }else{
                 while(true){
                     Console.Write("Text : ");
-                    String s = Console.In.ReadLine();
+                    String s = Console.In.ReadLine().ToLower();
+                    if(s == "!exit"){
+                        break;
+                    }
                     char[] text = s.ToCharArray();
                     String morse = "";
                     for (int i = 0; i < text.Length; i++){
